@@ -10,15 +10,15 @@
     $errStat = '';
 
     if(isset($_POST['submit'])){
-
-        require_once( realpath(dirname(__FILE__) . '/model.php') );
+        
+        require_once( realpath(dirname(__FILE__) . '/models/Story.php') );
 
         $name = $_POST['name'];
         $content = $_POST['content'];
 
         $story = new Story();
 
-        $result = $story->save($name, $content);
+        $result = $story->save(['name' => $name, 'content' => $content]);
 
         $db = null;
 
@@ -68,7 +68,7 @@
             <br>
             <label for="content" class="sr-only">Content</label>
             <div class="form-group">
-                <textarea id="editor" name="content" placeholder="Content" require></textarea>
+                <textarea id="editor" name="content" placeholder="Content"></textarea>
             </div>
             <br>
             <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Submit</button>
@@ -78,6 +78,15 @@
     </main>
 
     <?php require_once( realpath(dirname(__FILE__) . '/includes/script.php') ); ?>
+        
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+    <script>
+    tinymce.init({
+        selector: 'textarea#editor',
+        menubar: false
+    });
+    </script>
 
 </body>
 </html>

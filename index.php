@@ -40,6 +40,7 @@
                     var vm = this;
                     axios.get('/api.php')
                     .then(function(response) {
+                        console.log(response);
                         vm.stories = response.data;
                     })
                     .catch(function(error) {

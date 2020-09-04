@@ -10,7 +10,7 @@
 
     if(isset($_POST['login'])){
 
-        require_once( realpath(dirname(__FILE__) . '/model.php') );
+        require_once( realpath(dirname(__FILE__) . '/models/User.php') );
 
         $email = $_POST['email'];
         $pword = $_POST['pword'];

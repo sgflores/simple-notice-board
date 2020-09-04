@@ -1,9 +1,7 @@
 <?php
     
-    require_once( realpath(dirname(__FILE__) . '/model.php') );
+    require_once( realpath(dirname(__FILE__) . '/models/Story.php') );
 
-    // $postdata = file_get_contents("php://input");
-    
     $story = new Story();
 
     $result = $story->all();

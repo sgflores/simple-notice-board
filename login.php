@@ -19,8 +19,6 @@
 
         $result = $user->login($email, $pword);
 
-        $db = null;
-
         if( $result !== -1 ){
 
             $errMsg = '';

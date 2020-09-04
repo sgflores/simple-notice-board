@@ -20,8 +20,6 @@
 
         $result = $story->save(['name' => $name, 'content' => $content]);
 
-        $db = null;
-
         if( $result == 'success' ){
             
             $errStat = 'success';
